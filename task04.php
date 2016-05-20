@@ -19,18 +19,16 @@ $europeTimezones = array('Europe/Amsterdam', 'Europe/Andorra', 'Europe/Astrakhan
     'Europe/Skopje', 'Europe/Sofia', 'Europe/Stockholm', 'Europe/Tallinn',
     'Europe/Tirane', 'Europe/Ulyanovsk', 'Europe/Uzhgorod', 'Europe/Vaduz',
     'Europe/Vatican', 'Europe/Vienna', 'Europe/Vilnius', 'Europe/Volgograd',
-    'Europe/Warsaw', 'Europe/Zagreb', 'Europe/Zaporozhye', 'Europe/Zurich',
-    'Antarctica/Casey', 'Antarctica/Davis');
+    'Europe/Warsaw', 'Europe/Zagreb', 'Europe/Zaporozhye', 'Europe/Zurich');
 
 
 if(isset($_POST['submit'])) {
-    $tz = $_POST['tz'];
-    var_dump($tz);
+    $tz = new DateTimeZone($_POST['tz']);
 
     $time = new DateTime();
     $time->setTimezone($tz);
 
-    echo 'Time in ' . $tz . ' is ';
+    echo 'Time in ' . $tz->getName() . ' is ';
     echo date_format($time, 'H:i:s') . PHP_EOL;
 }
 ?>
