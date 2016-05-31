@@ -11,7 +11,7 @@
 
 $pattern = '/[^0-9\.\,]+/';
 
-$inputString = "'$123,34.00A'";
+$inputString = '$123,34.00A';
 
 echo $inputString . PHP_EOL;
 
