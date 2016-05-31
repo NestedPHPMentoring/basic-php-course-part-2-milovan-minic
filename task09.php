@@ -9,12 +9,12 @@
  * Expected Output : 12,334.00
  */
 
-$regularExpression = '/[^0-9\.\,]+/';
+$pattern = '/[^0-9\.\,]+/';
 
 $inputString = "'$123,34.00A'";
 
 echo $inputString . PHP_EOL;
 
-$outputString = preg_replace($regularExpression, '', $inputString);
+$outputString = preg_replace($pattern, '', $inputString);
 
 echo $outputString . PHP_EOL;
